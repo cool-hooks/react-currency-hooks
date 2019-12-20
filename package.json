@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/JB1905/react-currency-hooks#readme",
   "devDependencies": {
-    "@types/react": "^16.9.16",
+    "@types/react": "^16.9.17",
     "@typescript-eslint/parser": "^2.12.0",
     "eslint": "^6.7.2",
     "eslint-config-prettier": "^6.7.0",
