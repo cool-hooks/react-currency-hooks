@@ -1,8 +1,8 @@
 import { Rates } from '../types/rates';
 
 export interface Options {
-  from: string;
-  to: string;
-  base: string;
-  rates: Rates;
+  readonly from: string;
+  readonly to: string;
+  readonly base: string;
+  readonly rates: Rates;
 }
