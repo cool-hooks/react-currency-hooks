@@ -39,9 +39,9 @@ Name | Type | Default | Description
 
 
 #### Returned Values
-Name | Type | Description
--|-|-
-**** | number | Converted value
+Type | Description
+-|-
+number | Converted value
 
 ## Example
 ```js
