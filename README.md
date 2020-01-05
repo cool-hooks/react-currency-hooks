@@ -37,7 +37,6 @@ Name | Type | Default | Description
 **base** | string | ` ` | 
 **rates** | {} | `{}` | 
 
-
 #### Returned Values
 Type | Description
 -|-
@@ -51,7 +50,7 @@ import { useCurrency } from 'react-viewport-hooks';
 const App = () => {
   const rates = {
   }
-
+  
   const currency = useCurrency(200, {
     from: 'USD',
     to: 'CHF',

@@ -1,6 +1,6 @@
 {
   "name": "react-currency-hooks",
-  "version": "1.0.0-beta.0",
+  "version": "1.0.0",
   "description": "Currency converter React hook",
   "author": "Jakub Biesiada",
   "license": "MIT",
