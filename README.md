@@ -23,15 +23,24 @@ $ yarn add react-currency-hooks
 import { useCurrency } from 'react-currency-hooks';
 ```
 
-#### Options
+#### Params
 Name | Type | Default | Description
 -|-|-|-
 **amount** | number | ` ` | Amount of money to convert
+**options** | {} | ` ` | Convertion options
+
+#### Options
+Name | Type | Default | Description
+-|-|-|-
+**from** | string | ` ` | Amount of money to convert
+**to** | string | ` ` | 
+**base** | string | ` ` | 
+**rates** | {} | `{}` | 
 
 #### Returned Values
-Name | Type | Description
--|-|-
-**** | number | Converted value
+Type | Description
+-|-
+number | Converted value
 
 ## Example
 ```js
@@ -39,6 +48,9 @@ import React from 'react';
 import { useCurrency } from 'react-viewport-hooks';
 
 const App = () => {
+  const rates = {
+  }
+  
   const currency = useCurrency(200, {
     from: 'USD',
     to: 'CHF',
