@@ -32,10 +32,10 @@ Name | Type | Default | Description
 #### Options
 Name | Type | Default | Description
 -|-|-|-
-**from** | string | ` ` | Amount of money to convert
-**to** | string | ` ` | 
-**base** | string | ` ` | 
-**rates** | {} | `{}` | 
+**from** | string | ` ` | Currency to be converted
+**to** | string | ` ` | The currency to which it is converted
+**base** | string | ` ` | Base currency
+**rates** | {} | `{}` | Currency rates
 
 #### Returned Values
 Type | Description
@@ -49,7 +49,10 @@ import { useCurrency } from 'react-viewport-hooks';
 
 const App = () => {
   const rates = {
-  }
+    USD: 1.119132,
+    CHF: 1.083733,
+    EUR: 1.00
+  };
   
   const currency = useCurrency(200, {
     from: 'USD',
@@ -61,7 +64,7 @@ const App = () => {
   return (
     <p>USD to CHF: {currency}</p>
   );
-}
+};
 
 export default App;
 ```
