@@ -1,6 +1,6 @@
 {
   "name": "react-currency-hooks",
-  "version": "1.0.0-beta.1",
+  "version": "1.0.0",
   "description": "Currency converter React hook",
   "author": "Jakub Biesiada",
   "license": "MIT",
@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/JB1905/react-currency-hooks#readme",
   "devDependencies": {
-    "@rollup/plugin-node-resolve": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^7.0.0",
     "@types/react": "^16.9.17",
     "@typescript-eslint/parser": "^2.15.0",
     "eslint": "^6.8.0",
@@ -37,7 +37,7 @@
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.17.0",
     "eslint-plugin-react-hooks": "^2.3.0",
-    "husky": "^3.1.0",
+    "husky": "^4.0.1",
     "lint-staged": "^9.5.0",
     "prettier": "^1.19.1",
     "react": "^16.12.0",
