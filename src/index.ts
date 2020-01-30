@@ -1,4 +1,4 @@
-import { hasKey } from './helpers/has-key';
+import { hasKey } from './helpers/hasKey';
 
 import { Options } from './interfaces/Options';
 
