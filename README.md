@@ -56,7 +56,7 @@ const App = () => {
   };
 
   /*
-   * With single `to` value
+   * 1. With single `to` value
    */
   const currency = useCurrency(200, {
     from: 'USD',
@@ -70,7 +70,7 @@ const App = () => {
   );
 
   /*
-   * With multiple `to` value
+   * 2. With multiple `to` value
    */
   const { chf, gbp } = useCurrency(200, {
     from: 'USD',
