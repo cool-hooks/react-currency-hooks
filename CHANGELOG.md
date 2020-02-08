@@ -1,6 +1,6 @@
 # react-currency-hooks Changelog
 
-## 1.1.0 / 1.1.1 (2020-02-09)
+## 1.1.0 / 1.1.1 / 1.1.2 (2020-02-09)
 #### New Feature
 - support for multiple `to` values
 
