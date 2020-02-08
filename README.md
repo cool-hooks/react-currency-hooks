@@ -70,7 +70,7 @@ const App = () => {
   );
 
   /*
-   * 2. With multiple `to` value
+   * 2. With multiple `to` values
    */
   const { chf, gbp } = useCurrency(200, {
     from: 'USD',
