@@ -1,1 +1,3 @@
-export type Conversion = { [key: string]: number };
+export type Conversion = {
+  [key: string]: number;
+};
