@@ -38,7 +38,7 @@ export const useCurrency = (
     };
 
     if (to instanceof Array) {
-      let converted: Conversion = {};
+      const converted: Conversion = {};
 
       to.map(currency => {
         converted[currency.toLowerCase()] = convert(currency);

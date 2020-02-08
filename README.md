@@ -33,14 +33,14 @@ Name | Type | Default | Description
 Name | Type | Default | Description
 -|-|-|-
 **from** | string | ` ` | Currency to be converted
-**to** | string | ` ` | The currency to which it is converted
+**to** | string or string[] | ` ` | The currency to which it is converted
 **base** | string | ` ` | Base currency
 **rates** | {} | `{}` | Currency rates
 
 #### Returned Values
 Type | Description
 -|-
-number | Converted value
+number or object with currencies passed in to | Converted value
 
 ## Example
 ```js
@@ -63,6 +63,36 @@ const App = () => {
   
   return (
     <p>USD to CHF: {currency}</p>
+  );
+};
+
+export default App;
+```
+
+
+```js
+import React from 'react';
+import { useCurrency } from 'react-viewport-hooks';
+
+const App = () => {
+  const rates = {
+    USD: 1.119132,
+    CHF: 1.083733,
+    EUR: 1.00
+  };
+  
+  const {} = useCurrency(200, {
+    from: 'USD',
+    to: ['CHF', ''],
+    base: 'EUR',
+    rates
+  });
+  
+  return (
+    <>
+      <p>USD to CHF: {currency}</p>
+      <p>USD to CHF: {currency}</p>
+    </>
   );
 };
 
