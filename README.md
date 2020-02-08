@@ -35,7 +35,7 @@ Name | Type | Default | Description
 **from** | string | ` ` | Currency to be converted
 **to** | string or string[] | ` ` | The currency to which it is converted
 **base** | string | ` ` | Base currency
-**rates** | Readonly<Rates> | `{}` | Currency rates
+**rates** | {} | `{}` | Currency rates
 
 #### Returned Values
 Type | Description
