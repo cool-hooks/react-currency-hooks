@@ -40,7 +40,7 @@ Name | Type | Default | Description
 #### Returned Values
 Type | Description
 -|-
-number or object with currencies passed in to | Converted value
+number or object with currencies passed in `to` | Converted value
 
 ## Example
 ```js
@@ -49,11 +49,15 @@ import { useCurrency } from 'react-viewport-hooks';
 
 const App = () => {
   const rates = {
-    USD: 1.119132,
-    CHF: 1.083733,
-    EUR: 1.00
+    GBP: 0.92,
+    EUR: 1.00,
+    CHF: 1.08,
+    USD: 1.12
   };
-  
+
+  /*
+   * With single `to` value
+   */
   const currency = useCurrency(200, {
     from: 'USD',
     to: 'CHF',
@@ -64,34 +68,21 @@ const App = () => {
   return (
     <p>USD to CHF: {currency}</p>
   );
-};
 
-export default App;
-```
-
-
-```js
-import React from 'react';
-import { useCurrency } from 'react-viewport-hooks';
-
-const App = () => {
-  const rates = {
-    USD: 1.119132,
-    CHF: 1.083733,
-    EUR: 1.00
-  };
-  
-  const {} = useCurrency(200, {
+  /*
+   * With multiple `to` value
+   */
+  const { chf, gbp } = useCurrency(200, {
     from: 'USD',
-    to: ['CHF', ''],
+    to: ['CHF', 'GBP'],
     base: 'EUR',
     rates
   });
   
   return (
     <>
-      <p>USD to CHF: {currency}</p>
-      <p>USD to CHF: {currency}</p>
+      <p>USD to CHF: {chf}</p>
+      <p>USD to GBP: {gbp}</p>
     </>
   );
 };
