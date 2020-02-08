@@ -4,13 +4,13 @@ import { hasKey } from './helpers/hasKey';
 
 import { Options } from './interfaces/Options';
 
-import { Conversion } from './types/conversion';
+import { Rates } from './types/rates';
 
 export const useCurrency = (
   amount: number,
   { from, to, base, rates }: Options
 ) => {
-  const [conversion, setConversion] = useState<number | Conversion | undefined>(
+  const [conversion, setConversion] = useState<number | Rates | undefined>(
     to instanceof Array ? {} : undefined
   );
 
@@ -38,7 +38,7 @@ export const useCurrency = (
     };
 
     if (to instanceof Array) {
-      const converted: Conversion = {};
+      const converted: Rates = {};
 
       to.map(currency => {
         converted[currency.toLowerCase()] = convert(currency);

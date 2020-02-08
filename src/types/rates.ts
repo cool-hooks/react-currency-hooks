@@ -1,3 +1,3 @@
 export type Rates = {
-  readonly [name: string]: number;
+  [name: string]: number;
 };
