@@ -77,19 +77,4 @@ describe('useCurrency', () => {
 
     expect(result.current).toBe(192.85714285714286);
   });
-
-  // it('should throw error', () => {
-  //   const options = {
-  //     from: '',
-  //     to: '',
-  //     base: 'CHF',
-  //     rates
-  //   };
-
-  //   const { result } = renderHook(() => useCurrency(200, options));
-
-  //   expect(result.error.message).toThrow(
-  //     Error('`rates` object does not contain either `from` or `to` currency!')
-  //   );
-  // });
 });
