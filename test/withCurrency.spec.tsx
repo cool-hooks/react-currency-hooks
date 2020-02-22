@@ -3,8 +3,15 @@ import { render } from '@testing-library/react';
 
 import { withCurrency } from '../src';
 
-const App = ({ gbp }: any) => {
-  return <p>{gbp}</p>;
+const App = ({ currency }: any) => {
+  const value = currency(200, {
+    from: 'USD',
+    to: 'GBP',
+    base: 'EUR',
+    rates
+  });
+
+  return <p>{value}</p>;
 };
 
 const rates = {
@@ -14,12 +21,7 @@ const rates = {
   USD: 1.12
 };
 
-const AppHOC = withCurrency(App, 200, {
-  from: 'USD',
-  to: ['GBP'],
-  base: 'EUR',
-  rates
-});
+const AppHOC = withCurrency(App);
 
 describe('withCurrency', () => {
   it('should', () => {
