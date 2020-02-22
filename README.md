@@ -18,11 +18,6 @@ $ yarn add react-currency-hooks
 ```
 
 ## Getting Started
-**• Import hook in React application file:**
-```js
-import { useCurrency } from 'react-currency-hooks';
-```
-
 #### Params
 Name | Type | Default | Description
 -|-|-|-
@@ -42,10 +37,11 @@ Type | Description
 -|-
 number or object with currencies passed in `to` | Converted value
 
-## Example
+#### Example
+**`useCurrency` hook:**
 ```js
 import React from 'react';
-import { useCurrency } from 'react-viewport-hooks';
+import { useCurrency } from 'react-currency-hooks';
 
 const App = () => {
   const rates = {
@@ -88,6 +84,54 @@ const App = () => {
 };
 
 export default App;
+```
+
+**`withCurrency` HOC:**
+```js
+import React from 'react';
+import { withCurrency } from 'react-currency-hooks';
+
+const App = ({ convert }) => {
+  const rates = {
+    GBP: 0.92,
+    EUR: 1.00,
+    CHF: 1.08,
+    USD: 1.12
+  };
+
+  /*
+   * 1. With single `to` value
+   */
+  const currency = convert(200, {
+    from: 'USD',
+    to: 'CHF',
+    base: 'EUR',
+    rates
+  });
+
+  return (
+    <p>USD to CHF: {currency}</p>
+  );
+
+  /*
+   * 2. With multiple `to` values
+   */
+  const { chf, gbp } = convert(200, {
+    from: 'USD',
+    to: ['CHF', 'GBP'],
+    base: 'EUR',
+    rates
+  });
+
+  return (
+    <>
+      <p>USD to CHF: {chf}</p>
+      <p>USD to GBP: {gbp}</p>
+    </>
+  );
+};
+
+export default withCurrency(App);
 ```
 
 ## License

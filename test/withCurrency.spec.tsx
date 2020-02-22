@@ -3,8 +3,8 @@ import { render } from '@testing-library/react';
 
 import { withCurrency } from '../src';
 
-const App = ({ currency }: any) => {
-  const value = currency(200, {
+const App = ({ convert }: any) => {
+  const value = convert(200, {
     from: 'USD',
     to: 'GBP',
     base: 'EUR',
