@@ -14,7 +14,7 @@ const rates = {
   USD: 1.12
 };
 
-const AppHOC = withCurrency(App as any, 200, {
+const AppHOC = withCurrency(App, 200, {
   from: 'USD',
   to: ['GBP'],
   base: 'EUR',
