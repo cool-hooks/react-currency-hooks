@@ -86,53 +86,5 @@ const App = () => {
 export default App;
 ```
 
-**`withCurrency` HOC:**
-```js
-import React from 'react';
-import { withCurrency } from 'react-currency-hooks';
-
-const App = ({ convert }) => {
-  const rates = {
-    GBP: 0.92,
-    EUR: 1.00,
-    CHF: 1.08,
-    USD: 1.12
-  };
-
-  /*
-   * 1. With single `to` value
-   */
-  const currency = convert(200, {
-    from: 'USD',
-    to: 'CHF',
-    base: 'EUR',
-    rates
-  });
-
-  return (
-    <p>USD to CHF: {currency}</p>
-  );
-
-  /*
-   * 2. With multiple `to` values
-   */
-  const { chf, gbp } = convert(200, {
-    from: 'USD',
-    to: ['CHF', 'GBP'],
-    base: 'EUR',
-    rates
-  });
-
-  return (
-    <>
-      <p>USD to CHF: {chf}</p>
-      <p>USD to GBP: {gbp}</p>
-    </>
-  );
-};
-
-export default withCurrency(App);
-```
-
 ## License
 This project is licensed under the MIT License © 2020-present Jakub Biesiada

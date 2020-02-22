@@ -13,8 +13,8 @@
     "test": "jest --coverage",
     "watch": "npm run build -- --watch",
     "watch:test": "npm run test -- --watch",
-    "lint": "eslint 'src/**/*.{tsx,ts}' --fix",
-    "prettier": "prettier --write 'src/**/*.{tsx,ts}'"
+    "lint": "eslint 'src/**/*.ts' --fix",
+    "prettier": "prettier --write 'src/**/*.ts'"
   },
   "repository": {
     "type": "git",
@@ -59,7 +59,7 @@
   },
   "jest": {
     "transform": {
-      "^.+\\.tsx?$": "ts-jest"
+      "^.+\\.ts?$": "ts-jest"
     }
   },
   "husky": {
@@ -68,7 +68,7 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{tsx,ts}": [
+    "src/**/*.ts": [
       "npm run prettier",
       "npm run lint"
     ]
