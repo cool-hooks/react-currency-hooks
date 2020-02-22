@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import { useCurrency } from '../src/useCurrency';
+import { useCurrency } from '../src';
 
 describe('useCurrency', () => {
   const rates = {

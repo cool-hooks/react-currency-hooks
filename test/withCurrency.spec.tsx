@@ -1,13 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { render } from '@testing-library/react';
 
-import { withCurrency } from '../src/withCurrency';
+import { withCurrency } from '../src';
 
-class App extends Component {
-  render() {
-    return <p></p>;
-  }
-}
+const App = ({ gbp }: any) => {
+  return <p>{gbp}</p>;
+};
 
 const rates = {
   GBP: 0.92,
@@ -16,15 +14,21 @@ const rates = {
   USD: 1.12
 };
 
-const AppHOC = withCurrency(App, 200, {
+const AppHOC = withCurrency(App as any, 200, {
   from: 'USD',
-  to: 'GBP',
+  to: ['GBP'],
   base: 'EUR',
   rates
 });
 
 describe('withCurrency', () => {
-  const {} = render(<AppHOC />);
+  it('should', () => {
+    const { container } = render(<AppHOC />);
 
-  it('should', () => {});
+    expect(container.firstChild).toMatchInlineSnapshot(`
+      <p>
+        164.28571428571428
+      </p>
+    `);
+  });
 });
