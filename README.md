@@ -18,6 +18,11 @@ $ yarn add react-currency-hooks
 ```
 
 ## Getting Started
+**• Import hook in React application file:**
+```js
+import { useCurrency } from 'react-currency-hooks';
+```
+
 #### Params
 Name | Type | Default | Description
 -|-|-|-
@@ -37,8 +42,7 @@ Type | Description
 -|-
 number or object with currencies passed in `to` | Converted value
 
-#### Example
-**`useCurrency` hook:**
+## Example
 ```js
 import React from 'react';
 import { useCurrency } from 'react-currency-hooks';
