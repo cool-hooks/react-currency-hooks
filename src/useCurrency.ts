@@ -8,7 +8,7 @@ import { Rates } from './types/rates';
 
 export const useCurrency = (
   amount: number,
-  { from, to, base, rates }: Options
+  { from, to, base, rates, keepPrecision = true }: Options
 ) => {
   const [conversion, setConversion] = useState<number | Rates | undefined>(
     to instanceof Array ? {} : undefined
@@ -34,7 +34,11 @@ export const useCurrency = (
         );
       };
 
-      return (amount * 100 * getRate()) / 100;
+      const convertedValue = amount * 100 * getRate();
+
+      return (
+        (keepPrecision ? convertedValue : Math.round(convertedValue)) / 100
+      );
     };
 
     if (to instanceof Array) {

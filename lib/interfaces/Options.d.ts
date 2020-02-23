@@ -4,4 +4,5 @@ export interface Options {
     readonly to: string | string[];
     readonly base: string;
     readonly rates: Readonly<Rates>;
+    readonly keepPrecision?: boolean;
 }

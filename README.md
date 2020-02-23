@@ -36,6 +36,7 @@ Name | Type | Default | Description
 **to** | string or string[] | ` ` | The currency to which it is converted
 **base** | string | ` ` | Base currency
 **rates** | Rates | `{}` | Currency rates
+**keepPrecision** | boolean | `true` | `true` (return exact values), `false` (return values rounded to 2 places)
 
 #### Returned Values
 Type | Description

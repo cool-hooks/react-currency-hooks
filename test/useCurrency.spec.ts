@@ -39,6 +39,20 @@ describe('useCurrency', () => {
     });
   });
 
+  it('', () => {
+    const options = {
+      from: 'USD',
+      to: 'CHF',
+      base: 'EUR',
+      rates,
+      keepPrecision: false
+    };
+
+    const { result } = renderHook(() => useCurrency(200, options));
+
+    expect(result.current).toBe(192.86);
+  });
+
   it('should return single `to` value from hook with the same `base` and `from` rates', () => {
     const options = {
       from: 'EUR',
