@@ -39,7 +39,7 @@ describe('useCurrency', () => {
     });
   });
 
-  it('', () => {
+  it('should return value rounded to 2 places', () => {
     const options = {
       from: 'USD',
       to: 'CHF',
