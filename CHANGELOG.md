@@ -1,5 +1,9 @@
 # react-currency-hooks Changelog
 
+## 1.2.0 (2020-02-23)
+#### New Feature
+- added option `keepPrecision`
+
 ## 1.1.0 / 1.1.1 / 1.1.2 / 1.1.3 (2020-02-09)
 #### New Feature
 - support for multiple `to` values
