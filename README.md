@@ -36,6 +36,7 @@ Name | Type | Default | Description
 **to** | string or string[] | ` ` | The currency to which it is converted
 **base** | string | ` ` | Base currency
 **rates** | Rates | `{}` | Currency rates
+**keepPrecision** | boolean | `true` | `true` (return exact values), `false` (return values rounded to 2 places)
 
 #### Returned Values
 Type | Description
@@ -45,7 +46,7 @@ number or object with currencies passed in `to` | Converted value
 ## Example
 ```js
 import React from 'react';
-import { useCurrency } from 'react-viewport-hooks';
+import { useCurrency } from 'react-currency-hooks';
 
 const App = () => {
   const rates = {

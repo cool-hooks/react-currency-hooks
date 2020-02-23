@@ -7,14 +7,12 @@ module.exports = {
   ],
   plugins: ['prettier', 'react-hooks'],
   env: {
-    browser: true
+    browser: true,
+    jest: true
   },
   parserOptions: {
     ecmaVersion: 6,
-    sourceType: 'module',
-    ecmaFeatures: {
-      jsx: true
-    }
+    sourceType: 'module'
   },
   rules: {
     'react-hooks/rules-of-hooks': 'error',
