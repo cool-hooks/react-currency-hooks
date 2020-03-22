@@ -7,7 +7,7 @@ describe('useCurrency', () => {
     GBP: 0.92,
     EUR: 1.0,
     CHF: 1.08,
-    USD: 1.12
+    USD: 1.12,
   };
 
   it('should return single `to` value', () => {
@@ -15,7 +15,7 @@ describe('useCurrency', () => {
       from: 'USD',
       to: 'CHF',
       base: 'EUR',
-      rates
+      rates,
     };
 
     const { result } = renderHook(() => useCurrency(200, options));
@@ -28,14 +28,14 @@ describe('useCurrency', () => {
       from: 'USD',
       to: ['CHF', 'GBP'],
       base: 'EUR',
-      rates
+      rates,
     };
 
     const { result } = renderHook(() => useCurrency(200, options));
 
     expect(result.current).toMatchObject({
       chf: 192.85714285714286,
-      gbp: 164.28571428571428
+      gbp: 164.28571428571428,
     });
   });
 
@@ -45,7 +45,7 @@ describe('useCurrency', () => {
       to: 'CHF',
       base: 'EUR',
       rates,
-      keepPrecision: false
+      keepPrecision: false,
     };
 
     const { result } = renderHook(() => useCurrency(200, options));
@@ -58,7 +58,7 @@ describe('useCurrency', () => {
       from: 'EUR',
       to: 'CHF',
       base: 'EUR',
-      rates
+      rates,
     };
 
     const { result } = renderHook(() => useCurrency(200, options));
@@ -71,7 +71,7 @@ describe('useCurrency', () => {
       from: 'USD',
       to: 'CHF',
       base: 'CHF',
-      rates
+      rates,
     };
 
     const { result } = renderHook(() => useCurrency(200, options));
@@ -84,7 +84,7 @@ describe('useCurrency', () => {
       from: 'USD',
       to: 'CHF',
       base: '',
-      rates
+      rates,
     };
 
     const { result } = renderHook(() => useCurrency(200, options));
