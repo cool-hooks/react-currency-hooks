@@ -1,5 +1,9 @@
 # react-currency-hooks Changelog
 
+## 1.2.1 (2020-04-11)
+#### Repository Changes
+- updated devDependencies
+
 ## 1.2.0 (2020-02-23)
 #### New Feature
 - added option `keepPrecision`
