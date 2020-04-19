@@ -1,5 +1,9 @@
 # react-currency-hooks Changelog
 
+## 1.2.2 (2020-04-19)
+#### Repository Changes
+- updated repository URLs
+
 ## 1.2.1 (2020-04-11)
 #### Repository Changes
 - updated devDependencies

@@ -1,4 +1,4 @@
-# [react-currency-hooks](https://github.com/jb1905/react-currency-hooks)
+# [react-currency-hooks](https://github.com/cool-hooks/react-currency-hooks)
 
 [![NPM version](http://img.shields.io/npm/v/react-currency-hooks.svg?style=flat-square)](https://www.npmjs.com/package/react-currency-hooks)
 [![NPM downloads](http://img.shields.io/npm/dm/react-currency-hooks.svg?style=flat-square)](https://www.npmjs.com/package/react-currency-hooks)
