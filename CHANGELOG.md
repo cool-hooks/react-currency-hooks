@@ -1,5 +1,10 @@
 # react-currency-hooks Changelog
 
+## 1.2.3 (2020-05-03)
+#### Improvement
+- updated type definitions
+- added tests for throw error
+
 ## 1.2.2 (2020-04-19)
 #### Repository Changes
 - updated repository URLs
