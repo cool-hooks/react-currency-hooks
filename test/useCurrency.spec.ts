@@ -91,4 +91,21 @@ describe('useCurrency', () => {
 
     expect(result.current).toBe(192.85714285714286);
   });
+
+  it('should throw an error', () => {
+    try {
+      const options = {
+        from: '',
+        to: '',
+        base: '',
+        rates,
+      };
+
+      renderHook(() => useCurrency(200, options));
+    } catch (err) {
+      expect(err.message).toBe(
+        '`rates` object does not contain either `from` or `to` currency!'
+      );
+    }
+  });
 });

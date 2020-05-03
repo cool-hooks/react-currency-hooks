@@ -1,3 +1,1 @@
-export declare type Rates = {
-    [name: string]: number;
-};
+export declare type Rates = Record<string, number>;

@@ -1,3 +1,2 @@
 import { Options } from './interfaces/Options';
-import { Rates } from './types/rates';
-export declare const useCurrency: (amount: number, { from, to, base, rates, keepPrecision }: Options) => number | Rates | undefined;
+export declare const useCurrency: (amount: number, { from, to, base, rates, keepPrecision }: Options) => number | Record<string, number> | undefined;
