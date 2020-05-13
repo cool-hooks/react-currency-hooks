@@ -1,5 +1,7 @@
+import { Rates } from '../types/rates';
+
 export const hasKey = <T>(
-  obj: T,
+  obj: Rates,
   key: string | number | symbol
 ): key is keyof T => {
   return key in obj;
