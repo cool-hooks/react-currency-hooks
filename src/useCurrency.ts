@@ -4,7 +4,7 @@ import { hasKey } from './helpers/hasKey';
 
 import { Options } from './interfaces/Options';
 
-import { Rates } from './types/rates';
+import type { Rates } from './types/rates';
 
 export const useCurrency = (
   amount: number,
