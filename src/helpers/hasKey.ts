@@ -1,4 +1,4 @@
-import { Rates } from '../types/rates';
+import type { Rates } from '../types/rates';
 
 export const hasKey = <T>(
   obj: Rates,
