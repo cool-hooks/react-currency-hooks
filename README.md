@@ -31,20 +31,20 @@ import { useCurrency } from 'react-currency-hooks';
 
 #### Params
 
-| Name        | Type   | Default                         | Description |
-| ----------- | ------ | ------------------------------- | ----------- |
-| **amount**  | number | ` ` | Amount of money to convert |
-| **options** | {}     | ` ` | Convertion options         |
+| Name        | Type   | Default | Description                |
+| ----------- | ------ | ------- | -------------------------- |
+| **amount**  | number | ` `     | Amount of money to convert |
+| **options** | {}     | ` `     | Convertion options         |
 
 #### Options
 
-| Name              | Type               | Default                                    | Description                                                               |
-| ----------------- | ------------------ | ------------------------------------------ | ------------------------------------------------------------------------- |
-| **from**          | string             | ` ` | Currency to be converted              |
-| **to**            | string or string[] | ` ` | The currency to which it is converted |
-| **base**          | string             | ` ` | Base currency                         |
-| **rates**         | Rates              | `{}`                                       | Currency rates                                                            |
-| **keepPrecision** | boolean            | `true`                                     | `true` (return exact values), `false` (return values rounded to 2 places) |
+| Name              | Type               | Default | Description                                                               |
+| ----------------- | ------------------ | ------- | ------------------------------------------------------------------------- |
+| **from**          | string             | ` `     | Currency to be converted                                                  |
+| **to**            | string or string[] | ` `     | The currency to which it is converted                                     |
+| **base**          | string             | ` `     | Base currency                                                             |
+| **rates**         | Rates              | `{}`    | Currency rates                                                            |
+| **keepPrecision** | boolean            | `true`  | `true` (return exact values), `false` (return values rounded to 2 places) |
 
 #### Returned Values
 
@@ -61,7 +61,7 @@ import { useCurrency } from 'react-currency-hooks';
 const App = () => {
   const rates = {
     GBP: 0.92,
-    EUR: 1.00,
+    EUR: 1.0,
     CHF: 1.08,
     USD: 1.12,
   };
