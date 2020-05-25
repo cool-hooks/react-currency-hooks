@@ -4,46 +4,56 @@
 [![NPM downloads](http://img.shields.io/npm/dm/react-currency-hooks.svg?style=flat-square)](https://www.npmjs.com/package/react-currency-hooks)
 
 ## About
+
 Currency converter React hook
 
 ## How to Install
+
 First, install the library in your project by npm:
+
 ```sh
 $ npm install react-currency-hooks
 ```
 
 Or Yarn:
+
 ```sh
 $ yarn add react-currency-hooks
 ```
 
 ## Getting Started
+
 **• Import hook in React application file:**
+
 ```js
 import { useCurrency } from 'react-currency-hooks';
 ```
 
 #### Params
-Name | Type | Default | Description
--|-|-|-
-**amount** | number | ` ` | Amount of money to convert
-**options** | {} | ` ` | Convertion options
+
+| Name        | Type   | Default                         | Description |
+| ----------- | ------ | ------------------------------- | ----------- |
+| **amount**  | number | `` | Amount of money to convert |
+| **options** | {}     | `` | Convertion options         |
 
 #### Options
-Name | Type | Default | Description
--|-|-|-
-**from** | string | ` ` | Currency to be converted
-**to** | string or string[] | ` ` | The currency to which it is converted
-**base** | string | ` ` | Base currency
-**rates** | Rates | `{}` | Currency rates
-**keepPrecision** | boolean | `true` | `true` (return exact values), `false` (return values rounded to 2 places)
+
+| Name              | Type               | Default                                    | Description                                                               |
+| ----------------- | ------------------ | ------------------------------------------ | ------------------------------------------------------------------------- |
+| **from**          | string             | `` | Currency to be converted              |
+| **to**            | string or string[] | `` | The currency to which it is converted |
+| **base**          | string             | `` | Base currency                         |
+| **rates**         | Rates              | `{}`                                       | Currency rates                                                            |
+| **keepPrecision** | boolean            | `true`                                     | `true` (return exact values), `false` (return values rounded to 2 places) |
 
 #### Returned Values
-Type | Description
--|-
-number or object with currencies passed in `to` | Converted value
+
+| Type                                            | Description     |
+| ----------------------------------------------- | --------------- |
+| number or object with currencies passed in `to` | Converted value |
 
 ## Example
+
 ```js
 import React from 'react';
 import { useCurrency } from 'react-currency-hooks';
@@ -51,9 +61,9 @@ import { useCurrency } from 'react-currency-hooks';
 const App = () => {
   const rates = {
     GBP: 0.92,
-    EUR: 1.00,
+    EUR: 1.0,
     CHF: 1.08,
-    USD: 1.12
+    USD: 1.12,
   };
 
   /*
@@ -63,12 +73,10 @@ const App = () => {
     from: 'USD',
     to: 'CHF',
     base: 'EUR',
-    rates
+    rates,
   });
-  
-  return (
-    <p>USD to CHF: {currency}</p>
-  );
+
+  return <p>USD to CHF: {currency}</p>;
 
   /*
    * 2. With multiple `to` values
@@ -77,9 +85,9 @@ const App = () => {
     from: 'USD',
     to: ['CHF', 'GBP'],
     base: 'EUR',
-    rates
+    rates,
   });
-  
+
   return (
     <>
       <p>USD to CHF: {chf}</p>
@@ -92,4 +100,5 @@ export default App;
 ```
 
 ## License
+
 This project is licensed under the MIT License © 2020-present Jakub Biesiada
