@@ -33,16 +33,16 @@ import { useCurrency } from 'react-currency-hooks';
 
 | Name        | Type   | Default                         | Description |
 | ----------- | ------ | ------------------------------- | ----------- |
-| **amount**  | number | `` | Amount of money to convert |
-| **options** | {}     | `` | Convertion options         |
+| **amount**  | number | ` ` | Amount of money to convert |
+| **options** | {}     | ` ` | Convertion options         |
 
 #### Options
 
 | Name              | Type               | Default                                    | Description                                                               |
 | ----------------- | ------------------ | ------------------------------------------ | ------------------------------------------------------------------------- |
-| **from**          | string             | `` | Currency to be converted              |
-| **to**            | string or string[] | `` | The currency to which it is converted |
-| **base**          | string             | `` | Base currency                         |
+| **from**          | string             | ` ` | Currency to be converted              |
+| **to**            | string or string[] | ` ` | The currency to which it is converted |
+| **base**          | string             | ` ` | Base currency                         |
 | **rates**         | Rates              | `{}`                                       | Currency rates                                                            |
 | **keepPrecision** | boolean            | `true`                                     | `true` (return exact values), `false` (return values rounded to 2 places) |
 
