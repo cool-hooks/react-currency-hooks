@@ -61,7 +61,7 @@ import { useCurrency } from 'react-currency-hooks';
 const App = () => {
   const rates = {
     GBP: 0.92,
-    EUR: 1.0,
+    EUR: 1.00,
     CHF: 1.08,
     USD: 1.12,
   };
