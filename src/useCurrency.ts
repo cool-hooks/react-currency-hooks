@@ -6,10 +6,9 @@ import { Options } from './interfaces/Options';
 
 import type { Rates } from './types/rates';
 
-export const useCurrency = (
-  amount: number,
-  { from, to, base, rates, keepPrecision = true }: Options
-) => {
+export const useCurrency = (amount: number, options: Options) => {
+  const { from, to, base, rates, keepPrecision = true } = options;
+
   const [conversion, setConversion] = useState<number | Rates | undefined>(
     to instanceof Array ? {} : undefined
   );
