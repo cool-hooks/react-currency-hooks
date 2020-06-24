@@ -92,7 +92,7 @@ describe('useCurrency', () => {
     expect(result.current).toBe(192.85714285714286);
   });
 
-  it('should throw an error', () => {
+  it('should return an error', () => {
     try {
       const options = {
         from: '',
