@@ -10,6 +10,11 @@
 
 Currency converter React hook
 
+### Similar Projects
+
+- [Cashify](https://github.com/xxczaki/cashify/) by [Antoni Kepinski](https://github.com/xxczaki/)
+- [money.js](https://github.com/openexchangerates/money.js/) by [Open Exchange Rates](https://github.com/openexchangerates/)
+
 ## How to Install
 
 First, install the library in your project by npm:
