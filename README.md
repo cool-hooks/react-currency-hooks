@@ -1,7 +1,7 @@
 # [react-currency-hooks](https://github.com/cool-hooks/react-currency-hooks)
 
-[![NPM version](http://img.shields.io/npm/v/react-currency-hooks?style=flat-square)](https://www.npmjs.com/package/react-currency-hooks)
-[![NPM downloads](http://img.shields.io/npm/dm/react-currency-hooks?style=flat-square)](https://www.npmjs.com/package/react-currency-hooks)
+[![NPM version](https://img.shields.io/npm/v/react-currency-hooks?style=flat-square)](https://www.npmjs.com/package/react-currency-hooks)
+[![NPM downloads](https://img.shields.io/npm/dm/react-currency-hooks?style=flat-square)](https://www.npmjs.com/package/react-currency-hooks)
 [![NPM license](https://img.shields.io/npm/l/react-currency-hooks?style=flat-square)](https://www.npmjs.com/package/react-currency-hooks)
 [![Codecov](https://img.shields.io/codecov/c/github/cool-hooks/react-currency-hooks?style=flat-square)](https://codecov.io/gh/cool-hooks/react-currency-hooks)
 [![Travis](https://img.shields.io/travis/cool-hooks/react-currency-hooks/master?style=flat-square)](https://travis-ci.org/cool-hooks/react-currency-hooks)
