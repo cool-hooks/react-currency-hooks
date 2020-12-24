@@ -6,6 +6,8 @@ import { Options } from './interfaces/Options';
 
 import type { Rates } from './types/rates';
 
+type RateCallbackType = (to: string) => number;
+
 export const useCurrency = (amount: number, options: Options) => {
   const { from, to, base, rates, keepPrecision = true } = options;
 
@@ -13,29 +15,37 @@ export const useCurrency = (amount: number, options: Options) => {
     to instanceof Array ? {} : undefined
   );
 
-  const getRate = useCallback((to: string) => {
-    if (from === base && hasKey(rates, to)) {
-      return rates[to];
-    }
+  const getRate = useCallback<RateCallbackType>(
+    (to) => {
+      if (from === base && hasKey(rates, to)) {
+        return rates[to];
+      }
 
-    if (to === base && hasKey(rates, from)) {
-      return 1 / rates[from];
-    }
+      if (to === base && hasKey(rates, from)) {
+        return 1 / rates[from];
+      }
 
-    if (hasKey(rates, from) && hasKey(rates, to)) {
-      return rates[to] * (1 / rates[from]);
-    }
+      if (hasKey(rates, from) && hasKey(rates, to)) {
+        return rates[to] * (1 / rates[from]);
+      }
 
-    throw new Error(
-      '`rates` object does not contain either `from` or `to` currency!'
-    );
-  }, []);
+      throw new Error(
+        '`rates` object does not contain either `from` or `to` currency!'
+      );
+    },
+    [base, from, rates]
+  );
 
-  const convert = useCallback((to: string) => {
-    const convertedValue = amount * 100 * getRate(to);
+  const convert = useCallback<RateCallbackType>(
+    (to) => {
+      const convertedValue = amount * 100 * getRate(to);
 
-    return (keepPrecision ? convertedValue : Math.round(convertedValue)) / 100;
-  }, []);
+      return (
+        (keepPrecision ? convertedValue : Math.round(convertedValue)) / 100
+      );
+    },
+    [amount, getRate, keepPrecision]
+  );
 
   useEffect(() => {
     if (to instanceof Array) {
