@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 
 import { hasKey } from './helpers/hasKey';
 
@@ -13,7 +13,7 @@ export const useCurrency = (amount: number, options: Options) => {
     to instanceof Array ? {} : undefined
   );
 
-  const getRate = useCallback((to: string) => {
+  const getRate = (to: string) => {
     if (from === base && hasKey(rates, to)) {
       return rates[to];
     }
@@ -29,13 +29,13 @@ export const useCurrency = (amount: number, options: Options) => {
     throw new Error(
       '`rates` object does not contain either `from` or `to` currency!'
     );
-  }, []);
+  };
 
-  const convert = useCallback((to: string) => {
+  const convert = (to: string) => {
     const convertedValue = amount * 100 * getRate(to);
 
     return (keepPrecision ? convertedValue : Math.round(convertedValue)) / 100;
-  }, []);
+  };
 
   useEffect(() => {
     if (to instanceof Array) {
