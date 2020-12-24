@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 import { hasKey } from './helpers/hasKey';
 
@@ -13,33 +13,31 @@ export const useCurrency = (amount: number, options: Options) => {
     to instanceof Array ? {} : undefined
   );
 
+  const getRate = useCallback((to: string) => {
+    if (from === base && hasKey(rates, to)) {
+      return rates[to];
+    }
+
+    if (to === base && hasKey(rates, from)) {
+      return 1 / rates[from];
+    }
+
+    if (hasKey(rates, from) && hasKey(rates, to)) {
+      return rates[to] * (1 / rates[from]);
+    }
+
+    throw new Error(
+      '`rates` object does not contain either `from` or `to` currency!'
+    );
+  }, []);
+
+  const convert = useCallback((to: string) => {
+    const convertedValue = amount * 100 * getRate(to);
+
+    return (keepPrecision ? convertedValue : Math.round(convertedValue)) / 100;
+  }, []);
+
   useEffect(() => {
-    const convert = (to: string) => {
-      const getRate = () => {
-        if (from === base && hasKey(rates, to)) {
-          return rates[to];
-        }
-
-        if (to === base && hasKey(rates, from)) {
-          return 1 / rates[from];
-        }
-
-        if (hasKey(rates, from) && hasKey(rates, to)) {
-          return rates[to] * (1 / rates[from]);
-        }
-
-        throw new Error(
-          '`rates` object does not contain either `from` or `to` currency!'
-        );
-      };
-
-      const convertedValue = amount * 100 * getRate();
-
-      return (
-        (keepPrecision ? convertedValue : Math.round(convertedValue)) / 100
-      );
-    };
-
     if (to instanceof Array) {
       const converted: Rates = {};
 
