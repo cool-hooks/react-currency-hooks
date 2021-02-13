@@ -6,8 +6,6 @@ import { Options } from './interfaces/Options';
 
 import type { Rates } from './types/rates';
 
-type RateCallbackType = (to: string) => number;
-
 export const useCurrency = (amount: number, options: Options) => {
   const { from, to, base, rates, keepPrecision = true } = options;
 
@@ -15,8 +13,8 @@ export const useCurrency = (amount: number, options: Options) => {
     to instanceof Array ? {} : undefined
   );
 
-  const getRate = useCallback<RateCallbackType>(
-    (to) => {
+  const getRate = useCallback(
+    (to: string) => {
       if (from === base && hasKey(rates, to)) {
         return rates[to];
       }
@@ -36,8 +34,8 @@ export const useCurrency = (amount: number, options: Options) => {
     [base, from, rates]
   );
 
-  const convert = useCallback<RateCallbackType>(
-    (to) => {
+  const convert = useCallback(
+    (to: string) => {
       const convertedValue = amount * 100 * getRate(to);
 
       return (
