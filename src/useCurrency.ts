@@ -57,9 +57,7 @@ export const useCurrency = (amount: number, options: Options) => {
     } else if (typeof to === 'string') {
       setConversion(convert(to));
     }
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [convert, to]);
 
   return conversion;
 };
