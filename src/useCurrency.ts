@@ -37,6 +37,7 @@ export const useCurrency = (rootOptions?: Options) => {
         );
       };
 
+      // TODO rename function
       const convert = (to: string) => {
         const convertedValue = amount * 100 * getRate(to);
 
@@ -45,6 +46,7 @@ export const useCurrency = (rootOptions?: Options) => {
         );
       };
 
+      // TODO refactor
       if (to instanceof Array) {
         const converted: Rates = {};
 
