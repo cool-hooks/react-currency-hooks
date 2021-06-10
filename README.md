@@ -38,6 +38,8 @@ $ yarn add react-currency-hooks
 import { useCurrency } from 'react-currency-hooks';
 ```
 
+<!-- TODO update docs -->
+
 #### Params
 
 | Name        | Type   | Default | Description                |
