@@ -2,6 +2,8 @@ import { renderHook } from '@testing-library/react-hooks';
 
 import { useCurrency } from '../src';
 
+// TODO test different amount
+// TODO test root options
 describe('useCurrency', () => {
   const rates = {
     GBP: 0.92,
@@ -18,9 +20,9 @@ describe('useCurrency', () => {
       rates,
     };
 
-    const { result } = renderHook(() => useCurrency(200, options));
+    const { result } = renderHook(() => useCurrency());
 
-    expect(result.current).toBe(192.85714285714286);
+    expect(result.current(200, options)).toBe(192.85714285714286);
   });
 
   it('should return 2 `to` values', () => {
@@ -31,9 +33,9 @@ describe('useCurrency', () => {
       rates,
     };
 
-    const { result } = renderHook(() => useCurrency(200, options));
+    const { result } = renderHook(() => useCurrency());
 
-    expect(result.current).toMatchObject({
+    expect(result.current(200, options)).toMatchObject({
       chf: 192.85714285714286,
       gbp: 164.28571428571428,
     });
@@ -48,9 +50,9 @@ describe('useCurrency', () => {
       keepPrecision: false,
     };
 
-    const { result } = renderHook(() => useCurrency(200, options));
+    const { result } = renderHook(() => useCurrency());
 
-    expect(result.current).toBe(192.86);
+    expect(result.current(200, options)).toBe(192.86);
   });
 
   it('should return single `to` value from hook with the same `base` and `from` rates', () => {
@@ -61,9 +63,9 @@ describe('useCurrency', () => {
       rates,
     };
 
-    const { result } = renderHook(() => useCurrency(200, options));
+    const { result } = renderHook(() => useCurrency());
 
-    expect(result.current).toBe(216);
+    expect(result.current(200, options)).toBe(216);
   });
 
   it('should return single `to` value from hook with the same `base` and `to` rates', () => {
@@ -74,9 +76,9 @@ describe('useCurrency', () => {
       rates,
     };
 
-    const { result } = renderHook(() => useCurrency(200, options));
+    const { result } = renderHook(() => useCurrency());
 
-    expect(result.current).toBe(178.57142857142856);
+    expect(result.current(200, options)).toBe(178.57142857142856);
   });
 
   it('should return single `to` value from hook without `base` rate', () => {
@@ -87,9 +89,9 @@ describe('useCurrency', () => {
       rates,
     };
 
-    const { result } = renderHook(() => useCurrency(200, options));
+    const { result } = renderHook(() => useCurrency());
 
-    expect(result.current).toBe(192.85714285714286);
+    expect(result.current(200, options)).toBe(192.85714285714286);
   });
 
   it('should return an error', () => {
@@ -101,7 +103,9 @@ describe('useCurrency', () => {
         rates,
       };
 
-      renderHook(() => useCurrency(200, options));
+      const { result } = renderHook(() => useCurrency());
+
+      result.current(200, options);
     } catch (err) {
       expect(err.message).toBe(
         '`rates` object does not contain either `from` or `to` currency!'
