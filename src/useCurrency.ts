@@ -12,7 +12,7 @@ type ConvertCurrencyCallback = (
 ) => number | Record<string, number> | undefined;
 
 export const useCurrency = (rootOptions?: Options) => {
-  const convertCurrency = useCallback<ConvertCurrencyCallback>(
+  return useCallback<ConvertCurrencyCallback>(
     (amount, options) => {
       const { from, to, base, rates, keepPrecision = true } = {
         ...rootOptions,
@@ -63,6 +63,4 @@ export const useCurrency = (rootOptions?: Options) => {
     },
     [rootOptions]
   );
-
-  return convertCurrency;
 };
