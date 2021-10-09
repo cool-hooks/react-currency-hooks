@@ -13,7 +13,7 @@ Currency converter React hook
 
 ### Demo
 
-**[Playground – play with library in CodeSandbox](https://codesandbox.io/s/react-currency-hooks-l3b1l)**
+**[Playground – play with the library in CodeSandbox](https://codesandbox.io/s/react-currency-hooks-l3b1l)**
 
 ### Similar Projects
 
